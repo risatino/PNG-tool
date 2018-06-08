@@ -1,0 +1,83 @@
+		exporting: {
+      filename: '{url_title}',
+      type: 'image/png',
+      width: 600,
+      height: 600,
+			scale:1,
+      chartOptions: {
+        chart: {
+          width:560,
+          height:560,
+          marginLeft: 20,
+          marginRight: 20,
+          marginTop: 20,
+          marginBottom: 20,
+        },
+				{y_axis}{if row_count == '1'}yAxis:[{
+          gridLineWidth: 1,
+          lineWidth: 0,
+          tickLength: 0,
+          title: {
+            enabled: false,
+            margin: null
+				  },
+          {if '{max}' != ''}
+          max: {max},{/if}{if '{min}' != ''}
+          min: {min},{/if}{if '{tickInterval}' != ''}
+          tickInterval: {tickInterval},{/if}
+				  labels: {
+            enabled: false
+				  }
+        }{/if}{if row_count == '2'},{
+				  opposite: true,
+          gridLineWidth: 1,
+          lineWidth: 0,
+          tickLength: 0,
+				  title: {
+            enabled: false,
+            margin: null
+				  },
+          {if '{max}' != ''}
+          max: {max},{/if}{if '{min}' != ''}
+          min: {min},{/if}{if '{tickInterval}' != ''}
+          tickInterval: {tickInterval},{/if}
+				  labels: {
+            enabled: false
+				  }
+				}{/if}{/y_axis}{y_axis}{if row_count == '1'}],{/if}{/y_axis}
+				{if x_axis}xAxis: {
+          tickWidth: 0,
+					title: {
+						enabled: false
+				  	},
+					labels: {
+						enabled: false
+					},
+					labels: {
+						enabled: false
+					},
+				},{/if}
+        dataLabels: {
+          enabled: false
+        },
+        legend:{
+          enabled: false
+        },
+        title:{
+          text: ''
+        },
+        plotOptions: {
+          series: {
+            dataLabels: {
+              enabled: false
+            },
+            lineWidth: 2,
+            marker: {
+              radius: 4,
+              lineWidth: 2
+            },
+          }
+        },
+        fallbackToExportServer: false
+      }
+    }
