@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>On Nigeria | ChartBuilder</title>
+    <title>Chart Exporter</title>
 
     <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet" media="screen">
@@ -22,16 +22,17 @@
     <div class="container-fluid container-fluid-spacious">
       <div class="dashhead m-t-md">
         <div class="dashhead-titles">
-          <h6 class="dashhead-subtitle"> MacArthur / GeoPoll</h6>
-          <h2 class="dashhead-title">Constraints Against Anti Corruption Agencies</h2>
+          <!-- <h6 class="dashhead-subtitle"> MacArthur / GeoPoll</h6>
+          <h2 class="dashhead-title">Constraints Against Anti Corruption Agencies</h2> -->
         </div>
       </div>
       <div class="dashhead m-t-md">
         <div class="row">
           <div class="col-sm-12 chart-wrap">
+            
 
-
-            <div id="ibrahim_index_for_african_governance_nigeria" class="chart"></div>
+            <div id="export_chart">
+            </div>
 
           </div>
         </div>
@@ -41,8 +42,8 @@
             <div class="btn-group" role="group">
 
               <button type="button" class="btn btn-default" href="#code-modal" data-target="#code-modal" data-toggle="modal">Chart Code</button>
+              <button type="button" class="btn btn-default" id="chart-render">Render Chart</button>
               <button type="button" class="btn btn-default" id="chart-export">Export Image</button>
-
             </div>
 
             <div class="modal wide" id="code-modal" tabindex="-1" role="dialog">
@@ -54,13 +55,19 @@
                   </div>
                   <div class="modal-body">
                     <form>
-                      <textarea id="code">$(function() {
-  Highcharts.setOptions({lang: {numericSymbols: null,thousandsSep: ','},});var setFontsize = '20px';var setFontsizeLegend = '22px';var topMargin = 20;var axisMargin = 20;var rightMargin = 200;var bgColor = '#252830';
-  series: demand_for_bribes_by_government_officials_state,
-  //Chart Data
-  var ibrahim_index_for_african_governance_nigeria = [{ name: 'Africa',data: [35.4,35.5,35.5,35.6,35.9,36.2,36.4,37,37.9,37.2,36.3,36.4,37.1,36.2,35.5],visible: true},{ name: 'Nigeria',data: [24.4,22.8,21.2,22.8,24.6,25.8,26.6,29.3,33.9,31.8,31.3,30.8,32.4,32,32.2],visible: true}];
-  //Make Chart
-  $("#ibrahim_index_for_african_governance_nigeria").highcharts({chart: {marginRight: axisMargin,marginTop: topMargin,backgroundColor:bgColor,type: 'line'},legend: { layout: 'horizontal',itemStyle: {fontSize: setFontsizeLegend}},credits: false,exporting: {enabled: false},title: false,xAxis: [{title: {style: {fontSize: setFontsize},margin: axisMargin},categories: [2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014],tickmarkPlacement: 'off',labels: {style: {fontSize: setFontsize}}}],yAxis:[{title: {text: 'Score/100',style: {fontSize: setFontsize},margin: axisMargin},max: 100,min: 0,tickInterval: 10,labels: { formatter: function() {return Highcharts.numberFormat(this.value,0);},style: {fontSize: setFontsize}}}],tooltip: {shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',style: {fontSize: setFontsize}},plotOptions: {column: {dataLabels: {style: {fontSize: setFontsize}},style: {color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize}},series: {lineWidth: 4,marker: {fillColor:  bgColor,radius: 6,lineWidth: 4,lineColor: null,states: {hover: {enabled: true,radiusPlus: 4}}},states: {hover: {enabled: true,lineWidthPlus: 2}}}},series: ibrahim_index_for_african_governance_nigeria});});</textarea>
+                       <textarea id="code">
+                          $(function() {
+                            
+                            //Chart Data
+                            var ibrahim_index_for_african_governance_nigeria = [{ name: 'Africa',data: [35.4,35.5,35.5,35.6,35.9,36.2,36.4,37,37.9,37.2,36.3,36.4,37.1,36.2,35.5],visible: true},{ name: 'Nigeria',data: [24.4,22.8,21.2,22.8,24.6,25.8,26.6,29.3,33.9,31.8,31.3,30.8,32.4,32,32.2],visible: true}];
+
+                            Highcharts.setOptions({lang: {numericSymbols: null,thousandsSep: ','},});var setFontsize = '20px';var setFontsizeLegend = '22px';var topMargin = 20;var axisMargin = 20;var rightMargin = 200;var bgColor = '#252830';
+                            series: ibrahim_index_for_african_governance_nigeria
+                            //Make Chart
+                            $("#ibrahim_index_for_african_governance_nigeria").highcharts({chart: {marginRight: axisMargin,marginTop: topMargin,backgroundColor:bgColor,type: 'line'},legend: { layout: 'horizontal',itemStyle: {fontSize: setFontsizeLegend}},credits: false,exporting: {enabled: false},title: false,xAxis: [{title: {style: {fontSize: setFontsize},margin: axisMargin},categories: [2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014],tickmarkPlacement: 'off',labels: {style: {fontSize: setFontsize}}}],yAxis:[{title: {text: 'Score/100',style: {fontSize: setFontsize},margin: axisMargin},max: 100,min: 0,tickInterval: 10,labels: { formatter: function() {return Highcharts.numberFormat(this.value,0);},style: {fontSize: setFontsize}}}],tooltip: {shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',style: {fontSize: setFontsize}},plotOptions: {column: {dataLabels: {style: {fontSize: setFontsize}},style: {color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize}},series: {lineWidth: 4,marker: {fillColor:  bgColor,radius: 6,lineWidth: 4,lineColor: null,states: {hover: {enabled: true,radiusPlus: 4}}},states: {hover: {enabled: true,lineWidthPlus: 2}}}},series: ibrahim_index_for_african_governance_nigeria});});
+                          
+                          
+              </textarea> 
                     </form>
                   </div>
                 </div>
@@ -73,6 +80,15 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/core.min.js"></script>
-    <script src="js/ibrahim_index_for_african_governance_nigeria.js"></script>
+    <script src="js/export_helper.js"></script>
   </body>
 </html>
+ <!--$(function() {
+   
+  Highcharts.setOptions({lang: {numericSymbols: null,thousandsSep: ','},});var setFontsize = '20px';var setFontsizeLegend = '22px';var topMargin = 20;var axisMargin = 20;var rightMargin = 200;var bgColor = '#252830';
+  series: demand_for_bribes_by_government_officials_state,
+  //Chart Data
+  var ibrahim_index_for_african_governance_nigeria = [{ name: 'Africa',data: [35.4,35.5,35.5,35.6,35.9,36.2,36.4,37,37.9,37.2,36.3,36.4,37.1,36.2,35.5],visible: true},{ name: 'Nigeria',data: [24.4,22.8,21.2,22.8,24.6,25.8,26.6,29.3,33.9,31.8,31.3,30.8,32.4,32,32.2],visible: true}];
+  //Make Chart
+  $("#ibrahim_index_for_african_governance_nigeria").highcharts({chart: {marginRight: axisMargin,marginTop: topMargin,backgroundColor:bgColor,type: 'line'},legend: { layout: 'horizontal',itemStyle: {fontSize: setFontsizeLegend}},credits: false,exporting: {enabled: false},title: false,xAxis: [{title: {style: {fontSize: setFontsize},margin: axisMargin},categories: [2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014],tickmarkPlacement: 'off',labels: {style: {fontSize: setFontsize}}}],yAxis:[{title: {text: 'Score/100',style: {fontSize: setFontsize},margin: axisMargin},max: 100,min: 0,tickInterval: 10,labels: { formatter: function() {return Highcharts.numberFormat(this.value,0);},style: {fontSize: setFontsize}}}],tooltip: {shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',style: {fontSize: setFontsize}},plotOptions: {column: {dataLabels: {style: {fontSize: setFontsize}},style: {color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize}},series: {lineWidth: 4,marker: {fillColor:  bgColor,radius: 6,lineWidth: 4,lineColor: null,states: {hover: {enabled: true,radiusPlus: 4}}},states: {hover: {enabled: true,lineWidthPlus: 2}}}},series: ibrahim_index_for_african_governance_nigeria});});-->
+
