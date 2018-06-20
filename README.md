@@ -3,7 +3,7 @@ https://risatino.github.io/png-tool/
 
 This is as a stand alone tool. 
 
-1. Insert the following between your __Chart Data__ and __Make Chart__
+##### 1. Insert the following between your __Chart Data__ and __Make Chart__
 
 HighCharts setOptions
 
@@ -11,8 +11,8 @@ HighCharts setOptions
 
 `series: __minorities_jail_ada__`
 
-2. Change your series variable to match the HighCharts setOptions
+##### 2. Change your series variable to match the HighCharts setOptions
 
-3. Change your ```#chart-id-name``` to ```#export_chart``` to download a chart_output.png
+##### 3. Change your ```#chart-id-name``` to ```#export_chart``` to download a chart_output.png
 
-4. Rename your chart_output.png so you can make a new chart again.
+##### 4. Rename your chart_output.png so you can make a new chart again.
