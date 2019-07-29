@@ -1,7 +1,7 @@
 #### A HighChartJS export thumbnail tool to generate custom 600x600 png files
 https://risatino.github.io/png-tool/
 
-This is as a stand alone tool. 
+This is a stand alone tool. 
 
 ##### 1. Insert the following between your __Chart Data__ and __Make Chart__
 
